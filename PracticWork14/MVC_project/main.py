@@ -24,11 +24,11 @@ def run_mvc_demo():
 def run_strategy_demo():
     print("\n=== Strategy Demo ===")
     calculator = PriceCalculator(NoDiscountStrategy())
-    print("Без знижки:", calculator.calculate(100))
+    print("Без знижки:", calculator.calculate_price(100))
     calculator.set_strategy(RegularCustomerStrategy())
-    print("Знижка постійного клієнта:", calculator.calculate(100))
+    print("Знижка постійного клієнта:", calculator.calculate_price(100))
     calculator.set_strategy(LargeOrderStrategy())
-    print("Знижка для великого замовлення:", calculator.calculate(100))
+    print("Знижка для великого замовлення:", calculator.calculate_price(100))
 
 def run_observer_demo():
     print("\n=== Observer Demo ===")
