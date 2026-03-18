@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from .models import User
-from .models import Media
+from django.shortcuts import get_object_or_404, render
+from .models import User, Media, Comment
 # Create your views here.
 def home(request):
     user = User(first_name='Роман', last_name='Матвійчук', description='Student')
@@ -13,3 +12,12 @@ def home(request):
 
 def about(request):
     return render(request, 'blog/about.html')
+
+def media_detail(request, index):
+    media = get_object_or_404(Media, pk=index)
+    comments = Comment.objects.filter(media=media)
+    context = {
+        'media': media,
+        'comments': comments
+    }
+    return render(request, 'blog/media_detail.html', context)
