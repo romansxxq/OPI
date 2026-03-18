@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ media.title }}</h1>
+    <p>{{ media.description }}</p>
+    <p>Author: {{ media.author.first_name }} {{ media.author.last_name }}</p>
+    <p>Rating: {{ media.rating }}</p>
+    <p>Studio: {{ media.studio_name }}</p>
+
+    <h2>Comments:</h2>
+    {% for comment in comments %}
+        <div>
+            <p>{{ comment.author.first_name }} {{ comment.author.last_name }}:</p>
+            <p>{{ comment.text }}</p>
+        </div>
+    {% empty %}
+        <p>No comments for this media.</p>
+    {% endfor %}
+</body>
+</html>
