@@ -1,5 +1,8 @@
 from django.shortcuts import get_object_or_404, render
-from .models import User, Media, Comment
+from rest_framework import viewsets
+
+from .models import User, Media, Comment, Task
+from .serializers import TaskSerializer
 # Create your views here.
 def home(request):
     user = User(first_name='Роман', last_name='Матвійчук', description='Student')
@@ -21,3 +24,8 @@ def media_detail(request, index):
         'comments': comments
     }
     return render(request, 'blog/media_detail.html', context)
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
