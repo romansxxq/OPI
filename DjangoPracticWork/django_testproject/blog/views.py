@@ -21,3 +21,10 @@ def media_detail(request, index):
         'comments': comments
     }
     return render(request, 'blog/media_detail.html', context)
+
+from blog.models import Media
+media_list = list(Media.objects.all())
+for i, media in enumerate(media_list):
+    print(f"index: {i}, id: {media.id}, title: {media.title}")
+
+Media.objects.create(title="Test Media", description="Description", rating=5, studio_name="Studio")

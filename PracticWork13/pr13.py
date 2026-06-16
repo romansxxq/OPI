@@ -1,19 +1,19 @@
 # Stack
 
-# stack = []
+stack = []
 
-# stack.append(50)
-# stack.append(100)
-# stack.append(150)
-# stack.append(200)
-# stack.append(250)
+stack.append(50)
+stack.append(100)
+stack.append(150)
+stack.append(200)
+stack.append(250)
 
-# print("Initial stack:", stack)
+print("Initial stack:", stack)
 
-# # Pop elements from the stack
-# stack.pop()
-# stack.pop()
-# print("Stack after popping two elements:", stack)
+# Pop elements from the stack
+stack.pop()
+stack.pop()
+print("Stack after popping two elements:", stack)
 
 # def is_empty(stack):
 #     return len(stack) == 0
@@ -120,46 +120,46 @@ from collections import deque
 #     if mark in marks_count:
 #         marks_count[mark] += 1
 # print("Marks count:", marks_count)
-def add_product(products):
-    name = input("Enter product name: ")
-    price = float(input("Enter product price: "))
-    products[name] = price
-    print(f"Product {name} added with price {price}.")
-    return products
-def delete_product(products):
-    name = input("Enter product name to delete: ")
-    if name in products:
-        del products[name]
-        print(f"Product {name} deleted.")
-    else:
-        print(f"Product {name} not found.")
-    return products
-def show_products(products):
-    if products:
-        print("Products:")
-        for name, price in products.items():
-            print(f"- {name}: {price}")
-    else:
-        print("No products available.")
+# def add_product(products):
+#     name = input("Enter product name: ")
+#     price = float(input("Enter product price: "))
+#     products[name] = price
+#     print(f"Product {name} added with price {price}.")
+#     return products
+# def delete_product(products):
+#     name = input("Enter product name to delete: ")
+#     if name in products:
+#         del products[name]
+#         print(f"Product {name} deleted.")
+#     else:
+#         print(f"Product {name} not found.")
+#     return products
+# def show_products(products):
+#     if products:
+#         print("Products:")
+#         for name, price in products.items():
+#             print(f"- {name}: {price}")
+#     else:
+#         print("No products available.")
 
-def main_menu():
-    products = {}
-    while True:
-        print("Main Menu:")
-        print("1. Додати товар")
-        print("2. Видалити тоівар")
-        print("3. Показати всі товари")
-        print("0. Вийти")
+# def main_menu():
+#     products = {}
+#     while True:
+#         print("Main Menu:")
+#         print("1. Додати товар")
+#         print("2. Видалити тоівар")
+#         print("3. Показати всі товари")
+#         print("0. Вийти")
 
-        choice = int(input("Enter your choice (1-3): "))
-        if choice == 1: products = add_product(products)
-        elif choice == 2: products = delete_product(products)
-        elif choice == 3: show_products(products)
-        elif choice == 0: break
-        else:
-            print("Invalid choice. Please try again.")
-            return main_menu()
+#         choice = int(input("Enter your choice (1-3): "))
+#         if choice == 1: products = add_product(products)
+#         elif choice == 2: products = delete_product(products)
+#         elif choice == 3: show_products(products)
+#         elif choice == 0: break
+#         else:
+#             print("Invalid choice. Please try again.")
+#             return main_menu()
     
     
-if __name__ == "__main__":
-    main_menu()
+# if __name__ == "__main__":
+#     main_menu()
